@@ -1,0 +1,735 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Dash Board</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+	<meta charset="UTF-8">
+    <title> Drop Down Sidebar </title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src = "sa.js"></script>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<style>
+
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
+		*{
+			margin:0;
+			padding:0;
+			box-sizing: border-box;
+			font-family: Poppins;
+		}
+
+		body{
+			background-color: #E4E9F7;
+			background-size: cover;
+		}
+
+		ul.start{
+			list-style-type: none;
+			padding:0;
+			margin:0;
+			overflow: hidden;
+
+		}
+/*
+		.start li:hover{
+			background-color:rgb(30, 223, 223);
+		}
+
+		.start li:hover a{
+			color:#1d1b31;
+		} */
+
+		li.lk,li.li,li.l{
+			float:left;
+			width:310px;
+			height:1.1cm;
+			text-align: center;
+			background-color: #20283E;
+		}
+
+		li.lk a.a , li.l a.a , li.li a.a{
+			display:block;
+			text-decoration: none;
+			padding: 10px;
+			height:1.1cm;
+			color:white;
+			border-right: 1px solid ;
+		}
+
+		li.li{
+			width:40%;
+		}
+
+		li.l{
+			width:87px;
+		}
+
+		.bt{
+			margin-top: 1.5mm;
+			border: none;
+		}
+
+		.dark-mode{
+			background-color: black;
+			color:white;
+		}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+  position: fixed;
+  top: 10;
+  left: 0;
+  height: 100%;
+  width: 260px;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+.sidebar.close{
+  width: 78px;
+}
+.sidebar .logo-details{
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.sidebar .logo-details i{
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+}
+.sidebar .logo-details .logo_name{
+  font-size: 22px;
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s ease;
+  transition-delay: 0.1s;
+}
+.sidebar.close .logo-details .logo_name{
+  transition-delay: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links{
+  height: 100%;
+  padding: 30px 0 150px 0;
+  overflow: auto;
+}
+.sidebar.close .nav-links{
+  overflow: visible;
+}
+.sidebar .nav-links::-webkit-scrollbar{
+  display: none;
+}
+.sidebar .nav-links li{
+  position: relative;
+  list-style: none;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li:hover{
+  background: #1d1b31;
+}
+
+.sidebar .nav-links li .iocn-link{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar.close .nav-links li .iocn-link{
+  display: block
+}
+.sidebar .nav-links li i{
+  height: 50px;
+  min-width: 78px;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li.showMenu i.arrow{
+  transform: rotate(-180deg);
+}
+.sidebar.close .nav-links i.arrow{
+  display: none;
+}
+.sidebar .nav-links li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.sidebar .nav-links li a .link_name{
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.sidebar.close .nav-links li a .link_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li .sub-menu{
+  padding: 6px 6px 14px 80px;
+  margin-top: -10px;
+  background: #1d1b31;
+  display: none;
+}
+.sidebar .nav-links li.showMenu .sub-menu{
+  display: block;
+}
+.sidebar .nav-links li .sub-menu a{
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 0;
+  white-space: nowrap;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+.sidebar .nav-links li .sub-menu a:hover{
+  opacity: 1;
+}
+.sidebar.close .nav-links li .sub-menu{
+  position: absolute;
+  left: 100%;
+  top: -10px;
+  margin-top: 0;
+  padding: 10px 20px;
+  border-radius: 0 6px 6px 0;
+  opacity: 0;
+  display: block;
+  pointer-events: none;
+  transition: 0s;
+}
+.sidebar.close .nav-links li:hover .sub-menu{
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+  transition: all 0.4s ease;
+}
+.sidebar .nav-links li .sub-menu .link_name{
+  display: none;
+}
+.sidebar.close .nav-links li .sub-menu .link_name{
+  font-size: 18px;
+  opacity: 1;
+  display: block;
+}
+.sidebar .nav-links li .sub-menu.blank{
+  opacity: 1;
+  pointer-events: auto;
+  padding: 3px 20px 6px 16px;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar .nav-links li:hover .sub-menu.blank{
+  top: 50%;
+  transform: translateY(-50%);
+}
+.sidebar .profile-details{
+  position: fixed;
+  bottom: 0;
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #1d1b31;
+  padding: 12px 0;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details{
+  background: none;
+}
+.sidebar.close .profile-details{
+  width: 78px;
+}
+.sidebar .profile-details .profile-content{
+  display: flex;
+  align-items: center;
+}
+.sidebar .profile-details img{
+  height: 52px;
+  width: 52px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 14px 0 12px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+.sidebar.close .profile-details img{
+  padding: 10px;
+}
+.sidebar .profile-details .profile_name,
+.sidebar .profile-details .job{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.sidebar.close .profile-details i,
+.sidebar.close .profile-details .profile_name,
+.sidebar.close .profile-details .job{
+  display: none;
+}
+.sidebar .profile-details .job{
+  font-size: 12px;
+}
+.home-section{
+  position: relative;
+  background: #E4E9F7;
+  height: fit-content;
+  left: 260px;
+  width: calc(100% - 260px);
+  transition: all 0.5s ease;
+}
+.sidebar.close ~ .home-section{
+  left: 78px;
+  width: calc(100% - 78px);
+}
+.home-section .home-content{
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.home-section .home-content .bx-menu,
+.home-section .home-content .text{
+  color: #11101d;
+  font-size: 35px;
+}
+.home-section .home-content .bx-menu{
+  margin: 0 15px;
+  cursor: pointer;
+}
+.home-section .home-content .text{
+  font-size: 26px;
+  font-weight: 600;
+}
+@media (max-width: 400px) {
+  .sidebar.close .nav-links li .sub-menu{
+    display: none;
+  }
+  .sidebar{
+    width: 78px;
+  }
+  .sidebar.close{
+    width: 0;
+  }
+  .home-section{
+    left: 78px;
+    width: calc(100% - 78px);
+    z-index: 100;
+  }
+  .sidebar.close ~ .home-section{
+    width: 100%;
+    left: 0;
+  }
+}
+
+.menu a {
+	margin-left:50px;
+	border-radius:30px;
+	font-weight:bolder;;
+	padding: 10px;
+	color: #11101d;
+	text-decoration: none;
+	width:fit-content;
+	border:2px solid black;
+	background-color: bisque;
+	border-color: rgb(53, 77, 65); 
+}
+
+img.logo{
+	margin-left:25px;
+	margin-right:20px;
+}
+
+.item{
+	border:1px solid black;
+	box-sizing: border-box;
+	margin:1.5cm;
+	
+	padding:2px;
+	width:4cm;
+	height:5cm;
+	text-align: center;
+	display: inline-flex;
+	box-shadow: 0px 0px 5px 3px #888;
+	transition: all 0.2s ease-in;
+}
+
+.item:hover{
+	box-shadow: 0px 0px 10px 3px lightseagreen;
+	-ms-transform: scale(1.5);
+    -webkit-transform: scale(1.2);
+}
+
+.title,.price{
+	color:black;
+	font-weight: 600;
+}
+
+button{
+	margin-top:7px;
+    margin-left: 4px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+	padding-left:5px;
+	padding-right:5px;
+    border:2px solid black;
+    font-size:16px;
+    color:darkblue;
+}
+
+button:hover{
+    background-color: darkolivegreen;
+    color:bisque;
+    border:none;
+}
+
+.menu a:hover{
+	background-color: lightcoral;
+	color:blanchedalmond;
+}
+
+</style>
+</head>
+<body>
+
+	<ul class = "start">
+		<li class = "lk"><a href="#" class = "a"><span class = "s1" style=color:gold;font-size:large;">Rural<sub class = "sub" style="color:red;font-size:large;">Karnataka</sub></span></a></li>
+		<li class = "lk"><a href="#" class = "a">Location</a></li>
+		<li class = "li"><a href="#" class = "a"><input type = "search" size = "55" placeholder="Search the Products"><button type="submit"><i class="fa fa-search"></i></button></a></li>
+		<li class = "l"><a href="#" class = "a">Country</a></li>
+		<li class = "l"><a href="user.html" class = "a"><ion-icon name="person-circle-outline" style = "font-size: 30px;"></ion-icon></a></li>
+		<li class = "l"><a href="cart.html" class = "a"><ion-icon name="cart-outline" style = "font-size: 30px;"></ion-icon></a></li>
+
+	</ul>
+	
+
+	<div class="sidebar close">
+		<div class="logo-details">
+		  <img src="flag.jpg" alt="" width = "30" height = "30" class = "logo">
+		  <span class="logo_name"> Rural Karnataka</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<div class="iocn-link">
+				  <a href="#">
+					<i class='bx bx-grid-alt' ></i>
+					<span class="link_name">Dashboard</span>
+				  </a>
+				  <i class='bx bxs-chevron-down arrow' ></i>
+				</div>
+				<ul class="sub-menu">
+				  <li><a class="link_name" href="#">Dashboard</a></li>
+				  <li><a href="dashboardbs.html">Best Selling</a></li>
+				  <li><a href="dashboardnr.html">New Releases</a></li>
+				</ul>
+			  </li>
+		  <li>
+			<div class="iocn-link">
+			  <a href="#">
+				<img src="https://img.icons8.com/color/48/000000/cotton.png" width = "30" height = "30" class = "logo"/>
+				<span class="link_name">Cotton Textiles</span>
+			  </a>
+			  <i class='bx bxs-chevron-down arrow' ></i>
+			</div>
+			<ul class="sub-menu">
+			  <li><a class="link_name" href="#">Cotton and Silk Textiles</a></li>
+			  <li><a href="Handlooms_of_Ramanagar.html">HandLooms of Ramnagar</a></li>
+			  <li><a href="COTTON TEXTILE OF DAVANGERE.html">Cotton Textiles of Davanagere</a></li>
+			  <li><a href="cotton of chamrajnagar.html">Cotton of Chamarajanagar</a></li>
+			</ul>
+		  </li>
+		  <li>
+			<div class="iocn-link">
+			  <a href="#">
+				<i class='bx bx-book-alt' ></i>
+				<span class="link_name">Shop by Distict</span>
+			  </a>
+			  <i class='bx bxs-chevron-down arrow' ></i>
+			</div>
+			<ul class="sub-menu">
+			  <li><a class="link_name" href="#">Shop by Distict</a></li>
+			  <li><a href="chamarajanagar.html">Chamarajanagar</a></li>
+			  <li><a href="#">Ramanagar</a></li>
+			  <li><a href="CHITRADURGA.html">Chitradurga</a></li>
+			  <li><a href="#">Tumkur</a></li>
+			  <li><a href="BIDAR.html">Bidar</a></li>
+			  <li><a href="#">Gadag</a></li>
+			  <li><a href="#">Belagavi</a></li>
+			  <li><a href="BIJAPUR.html">Vijayapura</a></li>
+			  <li><a href="UDUPI.html">Udupi</a></li>
+			  <li><a href="#">Kolar</a></li>
+			  <li><a href="#">Dharwad</a></li>
+			  <li><a href="#">Ballary</a></li>
+			  <li><a href="#">Mandya</a></li>
+			  <li><a href="#">Bagalkot</a></li>
+			  <li><a href="#">Raichur</a></li>
+			  <li><a href="KOPPAL AND HASSAN.html">Koppal</a></li>
+			  <li><a href="KODAGU.html">Kodagu</a></li>
+			  <li><a href="KOPPAL AND HASSAN.html">Hassan</a></li>
+			  <li><a href="#">Shivamogga</a></li>
+			  <li><a href="dk and haveri and bu.html">Dakshina Kannada</a></li>
+			  <li><a href="dk and haveri and bu.html">Haveri</a></li>
+			  <li><a href="#">Uttara Kannada</a></li>
+			  <li><a href="DAVANGERE.html">Davanagere</a></li>
+			  <li><a href="#">Chikkamangaluru</a></li>
+			  <li><a href="CHIKKABALLAPURA.html">Chikkaballapura</a></li>
+			  <li><a href="#">Yadgir</a></li>
+			  <li><a href="#">Gulbarga</a></li>
+			  <li><a href="dk and haveri and bu.html">Bengaluru Urban</a></li>
+			</ul>
+		  </li>
+		  <li>
+			<a href="#">
+			  <i class='bx bx-pie-chart-alt-2' ></i>
+			  <span class="link_name">Today's Deal</span>
+			</a>
+			<ul class="sub-menu blank">
+			  <li><a class="link_name" href="todays.html">Today's Deal</a></li>
+			</ul>
+		  </li>
+		  <li>
+			<a href="#">
+			  <i class='bx bx-line-chart' ></i>
+			  <span class="link_name">Customer Service</span>
+			</a>
+			<ul class="sub-menu blank">
+			  <li><a class="link_name" href="customerservice.html">Customer Service</a></li>
+			</ul>
+		  </li>
+		  <li>
+			<a href="#">
+			  <i class='bx bx-compass' ></i>
+			  <span class="link_name">Sign out</span>
+			</a>
+			<ul class="sub-menu blank">
+			  <li><a class="link_name" href="login.html">Sign out</a></li>
+			</ul>
+		  </li>
+		  <li>
+		<div class="profile-details">
+		  <div class="profile-content">
+			<img src="customer.jpg" alt="profileImg">
+		  </div>
+		  <div class="name-job">
+			<div class="profile_name">Customer</div>
+			<div class="job">Full Stack</div>
+		  </div>
+		  <a href="login.html"><i class='bx bx-log-out' ></i></a>
+		</div>
+	  </li>
+	</ul>
+	  </div>
+	  <section class="home-section">
+		<div class="home-content">
+		  <i class='bx bx-menu' ></i>
+		  <span class="text">ALL</span>
+		  <span class = "menu"><a href = "freshneed.html">Freshneeds</a></span>
+		  <span class = "menu"><a href = "paddy.html">Paddy's</a></span>
+		  <span class = "menu"><a href = "pulses.html">Pulses</a></span>
+		  <span class = "menu"><a href = "dairy.html">Dairy</a></span>
+		</div>
+
+		<div class = "products1">
+			<div class = "item">
+				<div class = "image">
+					<a href="freshmango.html"><img src="freshmango.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Fresh Mango</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 100/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+			<div class = "item">
+				<div class = "image">
+					<a href="paddybasmati.html"><img src="paddybasmati.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Basmati</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 70/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+			<div class = "item">
+				<div class = "image">
+					<a href="pulseshorsegram.html"><img src="pulseshorsegram.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Horse Gram</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 400/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+			<div class = "item">
+				<div class = "image">
+					<a href="dairyicecream.html"><img src="dairyicecream.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Ice Cream</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 25/- PKT</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+			<div class = "item">
+				<div class = "image">
+					<a href="paddybrown.html"><img src="paddybrown.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Brown Rice</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 40/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="pulsesredkidneybeans.html"><img src="pulsesredkidneybeans.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Red Kidney Beans</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 250/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="dairypurepaneer.html"><img src="dairypurepaneer.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Pure Paneer</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 350/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="freshapple.html"><img src="freshapple.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Fresh Apple</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 70/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="pulsesredlentils.html"><img src="pulsesredlentils.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Red Lentils</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 150/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="dairycream.html"><img src="dairycream.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Cream</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 250/- PKT</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="freshgrapes.html"><img src="freshgrapes.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Fresh Grapes</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 50/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="paddyparboiled.html"><img src="paddyparboiled.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Par Boiled Rice</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 300/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="dairypureghee.html"><img src="dairypureghee.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Pure Ghee</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 240/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="freshlemon.html"><img src="freshlemon.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Fresh Lemons</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 30/- 6 pc</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="paddysushi.html"><img src="paddysushi.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Sushi</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 25/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="pulsessplitbengalgramlentils.html"><img src="pulsessplitbengalgramlentil.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Split Bengal Gram</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 180/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="freshpalak.html"><img src="freshpalak.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Fresh Palak</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 30/- Bch</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="paddyjasmine.html"><img src="paddyjasmine.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Jasmine Rice</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 70/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="pulsessplitblackgram.html"><img src="pulsessplitblackgram.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Split Black Gram</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 350/- Kg</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+
+			<div class = "item">
+				<div class = "image">
+					<a href="dairybadam.html"><img src="dairybadam.jpg" alt="not" width = "145" height="90"></a>
+					<span class = "title">Badam Milk</span> <br>
+					<span class = "price"><i class="fa fa-inr" style="font-size:16px"></i> 30/- PKT</span>
+					<button type = "button">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+		<br>
+
+
+	  </section>
+	
+	  <script src="script.js"></script>
+
+</body>
+</html>
